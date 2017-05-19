@@ -14,30 +14,7 @@ import { DashboardComponent } from './dashboard.component';
 import { WidgetComponent } from './widget.component';
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, SharedModule.forRoot(), FormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'widgets',
-        component: WidgetComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      },
-    ])
+  imports: [BrowserModule, HttpModule, AppRoutingModule, SharedModule.forRoot(), FormsModule
   ],
   declarations: [AppComponent,HeroDetailComponent, HeroesComponent, DashboardComponent, WidgetComponent ],
   providers: [ HeroService, {
