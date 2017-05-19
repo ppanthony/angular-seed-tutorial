@@ -10,6 +10,8 @@ import { HeroesComponent }     from './heroes.component';
 import { SharedModule } from './shared/shared.module';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
+import { DashboardComponent } from './dashboard.component';
+import { WidgetComponent } from './widget.component';
 
 @NgModule({
   imports: [BrowserModule, HttpModule, AppRoutingModule, SharedModule.forRoot(), FormsModule,
@@ -17,10 +19,27 @@ import { HeroService } from './hero.service';
       {
         path: 'heroes',
         component: HeroesComponent
-      }
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'widgets',
+        component: WidgetComponent
+      },
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+      },
     ])
   ],
-  declarations: [AppComponent,HeroDetailComponent, HeroesComponent],
+  declarations: [AppComponent,HeroDetailComponent, HeroesComponent, DashboardComponent, WidgetComponent ],
   providers: [ HeroService, {
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'
