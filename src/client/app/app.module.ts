@@ -13,10 +13,26 @@ import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import { WidgetComponent } from './widget.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, SharedModule.forRoot(), FormsModule
+  imports: [
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule,
+    SharedModule.forRoot(),
+    FormsModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  declarations: [AppComponent,HeroDetailComponent, HeroesComponent, DashboardComponent, WidgetComponent ],
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent,
+    WidgetComponent,
+
+  ],
   providers: [ HeroService, {
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'

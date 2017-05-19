@@ -377,6 +377,7 @@ export class SeedConfig {
     defaultJSExtensions: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
+      'angular-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
@@ -405,6 +406,7 @@ export class SeedConfig {
       '*': 'node_modules/*'
     },
     packages: {
+      'angular-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     }
   };
 
@@ -483,6 +485,10 @@ export class SeedConfig {
       },
       '@angular/service-worker': {
         main: 'bundles/service-worker.umd.js',
+        defaultExtension: 'js'
+      },
+      'angular-in-memory-web-api': {
+        main: 'bundles/in-memory-web-api.umd.js',
         defaultExtension: 'js'
       },
       'rxjs': {
